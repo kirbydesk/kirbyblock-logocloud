@@ -3,7 +3,7 @@
 	'kirbyblock-logocloud.name' => 'Logo-Wolke',
 	'kirbyblock-logocloud.ai' => 'Eine Reihe von Logos (z. B. Kunden oder Partner), jeweils in einem Kreis. Nur verwenden, wenn Logos als Bilder vorliegen.',
 	'kirbyblock-logocloud.logos' => 'Logos',
-	'kirbyblock-logocloud.logos.help' => 'Lade die Logos als SVG-Dateien hoch oder wähle sie aus. Die Reihenfolge änderst du per Drag & Drop.',
+	'kirbyblock-logocloud.logos.help' => 'Lade die Logos hoch oder wähle sie aus (SVG, PNG, JPG oder WebP, am besten SVG). Die Reihenfolge änderst du per Drag & Drop.',
 	'kirbyblock-logocloud.logos.empty' => 'Noch keine Logos',
 	'kirbyblock-logocloud.logo' => 'Logo',
 	'kirbyblock-logocloud.logo.name' => 'Name',

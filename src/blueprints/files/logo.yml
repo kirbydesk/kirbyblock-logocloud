@@ -3,7 +3,7 @@ title: kirbyblock-logocloud.logo
 options:
   changeTemplate: false
 accept:
-  extension: svg
+  extension: svg, png, jpg, jpeg, webp
 fields:
   logoName:
     type: text

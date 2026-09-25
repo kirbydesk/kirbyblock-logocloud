@@ -3,7 +3,7 @@
 	'kirbyblock-logocloud.name' => 'Logo Cloud',
 	'kirbyblock-logocloud.ai' => 'A set of logos (e.g. customers or partners), each in a circle. Only use it when logo images are available.',
 	'kirbyblock-logocloud.logos' => 'Logos',
-	'kirbyblock-logocloud.logos.help' => 'Upload or select the logos as SVG files. Drag to change the order.',
+	'kirbyblock-logocloud.logos.help' => 'Upload or select the logos (SVG, PNG, JPG or WebP, preferably SVG). Drag to change the order.',
 	'kirbyblock-logocloud.logos.empty' => 'No logos yet',
 	'kirbyblock-logocloud.logo' => 'Logo',
 	'kirbyblock-logocloud.logo.name' => 'Name',

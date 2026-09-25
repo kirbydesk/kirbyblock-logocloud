@@ -41,7 +41,9 @@ if ($logos->count() > 0):
 
 	foreach ($logos as $file):
 		$name = esc($file->logoName()->value(), 'attr');
-		$img  = '<img data-field="logo" src="'.$file->url().'" alt="'.$name.'"'.($name !== '' ? ' title="'.$name.'"' : '').' loading="lazy">';
+		// SVGs as they are, raster images as a small WebP thumb
+		$src  = $file->extension() === 'svg' ? $file->url() : $file->thumb(['width' => 480, 'format' => 'webp'])->url();
+		$img  = '<img data-field="logo" src="'.$src.'" alt="'.$name.'"'.($name !== '' ? ' title="'.$name.'"' : '').' loading="lazy">';
 
 		// With a website the whole circle links to it (new tab)
 		if ($file->logoLink()->isNotEmpty()):
