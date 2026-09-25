@@ -1,0 +1,137 @@
+/* DO NOT MODIFY THIS FILE - Override in site/patches/css/kirbyblock-logocloud/_styles.css */
+
+/* Item colors per theme */
+section[data-block="logocloud"] [data-block="item"]                          { background-color: var(--pwlogocloud-item-background); }
+section[data-block="logocloud"][data-style="variant"] [data-block="item"]    { background-color: var(--pwlogocloud-item-background-variant); }
+section[data-block="logocloud"][data-style="variant2"] [data-block="item"]   { background-color: var(--pwlogocloud-item-background-variant2); }
+section[data-block="logocloud"][data-style="variant3"] [data-block="item"]   { background-color: var(--pwlogocloud-item-background-variant3); }
+
+section[data-block="logocloud"] {
+
+	/* -------------- Tagline Margins--------------*/
+	[data-field="tagline"] {
+		+ [data-field="heading"] {
+			margin-top: 0.5rem;
+		}
+		+ [data-field="textarea"],
+		+ [data-field="writer"],
+		+ [data-field="markdown"] {
+			margin-top: 0.3rem;
+		}
+		+ [data-block="items"] {
+			margin-top: 1rem;
+		}
+	}
+	/* -------------- Heading Margins--------------*/
+	[data-field="heading"] {
+		+ [data-field="textarea"],
+		+ [data-field="writer"],
+		+ [data-field="markdown"] {
+			margin-top: 0.5rem;
+		}
+		+ [data-block="items"] {
+			margin-top: 2rem;
+		}
+	}
+	/* -------------- Texts Margins--------------*/
+	[data-field="textarea"],
+	[data-field="writer"],
+	[data-field="markdown"] {
+		+ [data-block="items"] {
+			margin-top: 2rem;
+		}
+	}
+
+	/* -------------- Items --------------*/
+	/* Logos keep their size; the row is at most "per row" logos wide and
+	   wraps earlier on narrow screens. Incomplete rows stay centered. */
+	div[data-block="items"] {
+		--pwlogocloud-size: var(--pwlogocloud-item-size, 8rem);
+		--pwlogocloud-per-row: 2;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--pwlogocloud-item-gap, 1.5rem);
+		max-width: calc(var(--pwlogocloud-per-row) * var(--pwlogocloud-size) + (var(--pwlogocloud-per-row) - 1) * var(--pwlogocloud-item-gap, 1.5rem));
+		margin-left: auto;
+		margin-right: auto;
+
+		/* Alignment of the logos (align button of the logos field) */
+		&[data-align="left"]  { justify-content: flex-start; margin-left: 0; }
+		&[data-align="right"] { justify-content: flex-end; margin-right: 0; }
+
+		/* Shape (Project Wizard → Items): square, round or four custom radii */
+		&[data-shape="square"] [data-block="item"] { border-radius: 0; }
+		&[data-shape="round"]  [data-block="item"] { border-radius: 50%; }
+		&[data-shape="custom"] [data-block="item"] {
+			border-radius:
+				var(--pwlogocloud-item-radius-top-left, 1rem)
+				var(--pwlogocloud-item-radius-top-right, 1rem)
+				var(--pwlogocloud-item-radius-bottom-right, 1rem)
+				var(--pwlogocloud-item-radius-bottom-left, 1rem);
+		}
+
+		[data-block="item"] {
+			flex: 0 0 var(--pwlogocloud-size);
+			max-width: 100%;
+			aspect-ratio: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: var(--pwlogocloud-item-padding, 1.25rem);
+			overflow: hidden;
+
+			img[data-field="logo"] {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+}
+
+/* Logos per row - SM (base, like the grid) */
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="1"] { --pwlogocloud-per-row: 1; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="2"] { --pwlogocloud-per-row: 2; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="3"] { --pwlogocloud-per-row: 3; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="4"] { --pwlogocloud-per-row: 4; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="5"] { --pwlogocloud-per-row: 5; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="6"] { --pwlogocloud-per-row: 6; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="7"] { --pwlogocloud-per-row: 7; }
+section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="8"] { --pwlogocloud-per-row: 8; }
+
+/* Logos per row - MD (from 768px) */
+@media (min-width: 768px) {
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="1"] { --pwlogocloud-per-row: 1; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="2"] { --pwlogocloud-per-row: 2; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="3"] { --pwlogocloud-per-row: 3; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="4"] { --pwlogocloud-per-row: 4; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="5"] { --pwlogocloud-per-row: 5; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="6"] { --pwlogocloud-per-row: 6; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="7"] { --pwlogocloud-per-row: 7; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-md="8"] { --pwlogocloud-per-row: 8; }
+}
+
+/* Logos per row - LG (from 1024px) */
+@media (min-width: 1024px) {
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="1"] { --pwlogocloud-per-row: 1; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="2"] { --pwlogocloud-per-row: 2; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="3"] { --pwlogocloud-per-row: 3; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="4"] { --pwlogocloud-per-row: 4; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="5"] { --pwlogocloud-per-row: 5; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="6"] { --pwlogocloud-per-row: 6; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="7"] { --pwlogocloud-per-row: 7; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-lg="8"] { --pwlogocloud-per-row: 8; }
+}
+
+/* Logos per row - XL (from 1280px) */
+@media (min-width: 1280px) {
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="1"] { --pwlogocloud-per-row: 1; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="2"] { --pwlogocloud-per-row: 2; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="3"] { --pwlogocloud-per-row: 3; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="4"] { --pwlogocloud-per-row: 4; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="5"] { --pwlogocloud-per-row: 5; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="6"] { --pwlogocloud-per-row: 6; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="7"] { --pwlogocloud-per-row: 7; }
+	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="8"] { --pwlogocloud-per-row: 8; }
+}

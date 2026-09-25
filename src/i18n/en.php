@@ -1,0 +1,38 @@
+<?php return array(
+
+	'kirbyblock-logocloud.name' => 'Logo Cloud',
+	'kirbyblock-logocloud.ai' => 'A set of logos (e.g. customers or partners), each in a circle. Only use it when logo images are available.',
+	'kirbyblock-logocloud.logos' => 'Logos',
+	'kirbyblock-logocloud.logos.help' => 'Upload or select the logos as SVG files. Drag to change the order.',
+	'kirbyblock-logocloud.logos.empty' => 'No logos yet',
+	'kirbyblock-logocloud.logo' => 'Logo',
+	'kirbyblock-logocloud.logo.name' => 'Name',
+	'kirbyblock-logocloud.logo.name.help' => 'Name of the company or organisation. Used as the alternative text of the logo.',
+	'kirbyblock-logocloud.logo.name.placeholder' => 'Name...',
+	'kirbyblock-logocloud.logo.link' => 'Website',
+	'kirbyblock-logocloud.logo.link.help' => 'Optional. The logo links to this website and opens it in a new tab.',
+
+	'kirbyblock-logocloud.per-row' => 'Logos per row',
+	'kirbyblock-logocloud.item-gap' => 'Logo Gap',
+	'kirbyblock-logocloud.per-row.sm' => 'Logos per row (SM)',
+	'kirbyblock-logocloud.per-row.sm.help' => '<span class="tag screensize">Small screens</span><br>Maximum number of logos per row on small screens (SM, up to `767px`).',
+	'kirbyblock-logocloud.per-row.md' => 'Logos per row (MD)',
+	'kirbyblock-logocloud.per-row.md.help' => '<span class="tag screensize">Medium screens</span><br>Maximum number of logos per row on medium screens (MD, `768px` to `1023px`).',
+	'kirbyblock-logocloud.per-row.lg' => 'Logos per row (LG)',
+	'kirbyblock-logocloud.per-row.lg.help' => '<span class="tag screensize">Large screens</span><br>Maximum number of logos per row on large screens (LG, `1024px` to `1279px`).',
+	'kirbyblock-logocloud.per-row.xl' => 'Logos per row (XL)',
+	'kirbyblock-logocloud.per-row.xl.help' => '<span class="tag screensize">Extra large screens</span><br>Maximum number of logos per row on extra large screens (XL, from `1280px`).',
+	'prw.field.logos-sm' => 'Logos per row (SM)',
+	'prw.field.logos-md' => 'Logos per row (MD)',
+	'prw.field.logos-lg' => 'Logos per row (LG)',
+	'prw.field.logos-xl' => 'Logos per row (XL)',
+	'prw.prop.item-size' => 'Logo Size',
+
+	/* -------------- Item value labels (rendered by pw-block-values) --------------*/
+	'prw.valuegroup.items'     => 'Items',
+	'prw.prop.item-padding'    => 'Padding',
+	'pw.field.shape'           => 'Shape',
+	'pw.option.square'         => 'Square',
+	'prw.prop.item-radius'     => 'Radius',
+	'prw.prop.item-background' => 'Background',
+);

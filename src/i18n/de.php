@@ -1,0 +1,38 @@
+<?php return array(
+
+	'kirbyblock-logocloud.name' => 'Logo-Wolke',
+	'kirbyblock-logocloud.ai' => 'Eine Reihe von Logos (z. B. Kunden oder Partner), jeweils in einem Kreis. Nur verwenden, wenn Logos als Bilder vorliegen.',
+	'kirbyblock-logocloud.logos' => 'Logos',
+	'kirbyblock-logocloud.logos.help' => 'Lade die Logos als SVG-Dateien hoch oder wähle sie aus. Die Reihenfolge änderst du per Drag & Drop.',
+	'kirbyblock-logocloud.logos.empty' => 'Noch keine Logos',
+	'kirbyblock-logocloud.logo' => 'Logo',
+	'kirbyblock-logocloud.logo.name' => 'Name',
+	'kirbyblock-logocloud.logo.name.help' => 'Name des Unternehmens oder der Organisation. Wird als Alternativtext des Logos verwendet.',
+	'kirbyblock-logocloud.logo.name.placeholder' => 'Name …',
+	'kirbyblock-logocloud.logo.link' => 'Website',
+	'kirbyblock-logocloud.logo.link.help' => 'Optional. Das Logo verlinkt auf diese Website und öffnet sie in einem neuen Tab.',
+
+	'kirbyblock-logocloud.per-row' => 'Logos pro Reihe',
+	'kirbyblock-logocloud.item-gap' => 'Abstand zwischen Logos',
+	'kirbyblock-logocloud.per-row.sm' => 'Logos pro Reihe (SM)',
+	'kirbyblock-logocloud.per-row.sm.help' => '<span class="tag screensize">Kleine Bildschirme</span><br>Höchstens so viele Logos stehen auf kleinen Bildschirmen (SM, bis `767px`) in einer Reihe.',
+	'kirbyblock-logocloud.per-row.md' => 'Logos pro Reihe (MD)',
+	'kirbyblock-logocloud.per-row.md.help' => '<span class="tag screensize">Mittlere Bildschirme</span><br>Höchstens so viele Logos stehen auf mittleren Bildschirmen (MD, `768px` bis `1023px`) in einer Reihe.',
+	'kirbyblock-logocloud.per-row.lg' => 'Logos pro Reihe (LG)',
+	'kirbyblock-logocloud.per-row.lg.help' => '<span class="tag screensize">Große Bildschirme</span><br>Höchstens so viele Logos stehen auf großen Bildschirmen (LG, `1024px` bis `1279px`) in einer Reihe.',
+	'kirbyblock-logocloud.per-row.xl' => 'Logos pro Reihe (XL)',
+	'kirbyblock-logocloud.per-row.xl.help' => '<span class="tag screensize">Sehr große Bildschirme</span><br>Höchstens so viele Logos stehen auf sehr großen Bildschirmen (XL, ab `1280px`) in einer Reihe.',
+	'prw.field.logos-sm' => 'Logos pro Reihe (SM)',
+	'prw.field.logos-md' => 'Logos pro Reihe (MD)',
+	'prw.field.logos-lg' => 'Logos pro Reihe (LG)',
+	'prw.field.logos-xl' => 'Logos pro Reihe (XL)',
+	'prw.prop.item-size' => 'Logogröße',
+
+	/* -------------- Item value labels (rendered by pw-block-values) --------------*/
+	'prw.valuegroup.items'     => 'Einträge',
+	'prw.prop.item-padding'    => 'Innenabstand',
+	'pw.field.shape'           => 'Form',
+	'pw.option.square'         => 'Eckig',
+	'prw.prop.item-radius'     => 'Eckenradius',
+	'prw.prop.item-background' => 'Hintergrund',
+);

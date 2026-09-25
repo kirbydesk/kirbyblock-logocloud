@@ -1,0 +1,17 @@
+---
+title: kirbyblock-logocloud.logo
+options:
+  changeTemplate: false
+accept:
+  extension: svg
+fields:
+  logoName:
+    type: text
+    label: kirbyblock-logocloud.logo.name
+    help: kirbyblock-logocloud.logo.name.help
+    placeholder: kirbyblock-logocloud.logo.name.placeholder
+  logoLink:
+    type: url
+    label: kirbyblock-logocloud.logo.link
+    help: kirbyblock-logocloud.logo.link.help
+    placeholder: https://
