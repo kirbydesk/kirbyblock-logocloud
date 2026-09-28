@@ -125,6 +125,7 @@
 				}
 			},
 			"logos": {
+				"locked": true,
 				"align": {
 					"options": [
 						"left",
