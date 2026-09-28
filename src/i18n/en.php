@@ -16,7 +16,7 @@
 	'kirbyblock-logocloud.item-format' => 'Format',
 	'kirbyblock-logocloud.item-format.square' => 'Square',
 	'kirbyblock-logocloud.item-format.flexible' => 'Flexible',
-	'kirbyblock-logocloud.item-padding' => 'Horizontal padding',
+	'kirbyblock-logocloud.item-padding' => 'Horizontal gap',
 	'kirbyblock-logocloud.item-padding-y' => 'Vertical padding',
 	'kirbyblock-logocloud.item-text-gap' => 'Gap to the text',
 	'kirbyblock-logocloud.item-gap' => 'Horizontal gap',
