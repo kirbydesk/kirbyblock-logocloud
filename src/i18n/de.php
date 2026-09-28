@@ -16,6 +16,8 @@
 	'kirbyblock-logocloud.item-format' => 'Format',
 	'kirbyblock-logocloud.item-format.square' => 'Quadratisch',
 	'kirbyblock-logocloud.item-format.flexible' => 'Flexibel',
+	'kirbyblock-logocloud.item-padding' => 'Innenabstand horizontal',
+	'kirbyblock-logocloud.item-padding-y' => 'Innenabstand vertikal',
 	'kirbyblock-logocloud.item-gap' => 'Horizontaler Abstand',
 	'kirbyblock-logocloud.item-row-gap' => 'Vertikaler Abstand',
 	'kirbyblock-logocloud.per-row.sm' => 'Logos pro Reihe (SM)',

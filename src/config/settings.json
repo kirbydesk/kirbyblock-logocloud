@@ -38,6 +38,15 @@
 					"unit": "rem",
 					"step": 0.05,
 					"min": 0,
+					"max": 4,
+					"label": "kirbyblock-logocloud.item-padding"
+				},
+				"item-padding-y": {
+					"label": "kirbyblock-logocloud.item-padding-y",
+					"value": "1.25rem",
+					"unit": "rem",
+					"step": 0.05,
+					"min": 0,
 					"max": 4
 				},
 				"item-radius": {

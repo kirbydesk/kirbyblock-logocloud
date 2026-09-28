@@ -80,7 +80,8 @@ section[data-block="logocloud"] {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: var(--pwlogocloud-item-padding, 1.25rem);
+			/* vertical / horizontal */
+			padding: var(--pwlogocloud-item-padding-y) var(--pwlogocloud-item-padding, 1.25rem);
 			overflow: hidden;
 
 			img[data-field="logo"] {
