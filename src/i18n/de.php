@@ -13,7 +13,8 @@
 	'kirbyblock-logocloud.logo.link.help' => 'Optional. Das Logo verlinkt auf diese Website und öffnet sie in einem neuen Tab.',
 
 	'kirbyblock-logocloud.per-row' => 'Logos pro Reihe',
-	'kirbyblock-logocloud.item-gap' => 'Abstand zwischen Logos',
+	'kirbyblock-logocloud.item-gap' => 'Horizontaler Abstand',
+	'kirbyblock-logocloud.item-row-gap' => 'Vertikaler Abstand',
 	'kirbyblock-logocloud.per-row.sm' => 'Logos pro Reihe (SM)',
 	'kirbyblock-logocloud.per-row.sm.help' => '<span class="tag screensize">Kleine Bildschirme</span><br>Höchstens so viele Logos stehen auf kleinen Bildschirmen (SM, bis `767px`) in einer Reihe.',
 	'kirbyblock-logocloud.per-row.md' => 'Logos pro Reihe (MD)',

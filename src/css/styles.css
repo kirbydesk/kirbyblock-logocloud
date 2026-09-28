@@ -51,7 +51,9 @@ section[data-block="logocloud"] {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: var(--pwlogocloud-item-gap, 1.5rem);
+		/* between the rows / between the logos of a row */
+		row-gap: var(--pwlogocloud-item-row-gap);
+		column-gap: var(--pwlogocloud-item-gap, 1.5rem);
 		max-width: calc(var(--pwlogocloud-per-row) * var(--pwlogocloud-size) + (var(--pwlogocloud-per-row) - 1) * var(--pwlogocloud-item-gap, 1.5rem));
 		margin-left: auto;
 		margin-right: auto;

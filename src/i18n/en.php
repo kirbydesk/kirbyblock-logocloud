@@ -13,7 +13,8 @@
 	'kirbyblock-logocloud.logo.link.help' => 'Optional. The logo links to this website and opens it in a new tab.',
 
 	'kirbyblock-logocloud.per-row' => 'Logos per row',
-	'kirbyblock-logocloud.item-gap' => 'Logo Gap',
+	'kirbyblock-logocloud.item-gap' => 'Horizontal gap',
+	'kirbyblock-logocloud.item-row-gap' => 'Vertical gap',
 	'kirbyblock-logocloud.per-row.sm' => 'Logos per row (SM)',
 	'kirbyblock-logocloud.per-row.sm.help' => '<span class="tag screensize">Small screens</span><br>Maximum number of logos per row on small screens (SM, up to `767px`).',
 	'kirbyblock-logocloud.per-row.md' => 'Logos per row (MD)',

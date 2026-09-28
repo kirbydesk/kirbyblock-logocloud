@@ -25,6 +25,14 @@
 					"min": 0,
 					"max": 6
 				},
+				"item-row-gap": {
+					"label": "kirbyblock-logocloud.item-row-gap",
+					"value": "1.5rem",
+					"unit": "rem",
+					"step": 0.1,
+					"min": 0,
+					"max": 6
+				},
 				"item-padding": {
 					"value": "1.25rem",
 					"unit": "rem",
