@@ -147,7 +147,8 @@
 					"options": [
 						"left",
 						"center",
-						"right"
+						"right",
+						"justify"
 					],
 					"default": "center"
 				},
