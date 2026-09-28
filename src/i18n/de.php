@@ -27,7 +27,7 @@
 	'prw.field.logos-md' => 'Logos pro Reihe (MD)',
 	'prw.field.logos-lg' => 'Logos pro Reihe (LG)',
 	'prw.field.logos-xl' => 'Logos pro Reihe (XL)',
-	'prw.prop.item-size' => 'Logogröße',
+	'prw.prop.item-size' => 'Maximale Größe',
 
 	/* -------------- Item value labels (rendered by pw-block-values) --------------*/
 	'prw.valuegroup.items'     => 'Einträge',
