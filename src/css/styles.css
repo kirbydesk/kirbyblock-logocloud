@@ -19,7 +19,7 @@ section[data-block="logocloud"] {
 			margin-top: 0.3rem;
 		}
 		+ [data-block="items"] {
-			margin-top: 1rem;
+			margin-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 	/* -------------- Heading Margins--------------*/
@@ -30,7 +30,7 @@ section[data-block="logocloud"] {
 			margin-top: 0.5rem;
 		}
 		+ [data-block="items"] {
-			margin-top: 2rem;
+			margin-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 	/* -------------- Texts Margins--------------*/
@@ -38,7 +38,7 @@ section[data-block="logocloud"] {
 	[data-field="writer"],
 	[data-field="markdown"] {
 		+ [data-block="items"] {
-			margin-top: 2rem;
+			margin-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 
