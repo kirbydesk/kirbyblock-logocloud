@@ -36,6 +36,7 @@ if ($logos->count() > 0):
 		echo ' data-per-row-'.$bp.'="'.$block->content()->get('logos'.$bp)->or($defaults['logos-'.$bp] ?? 4)->value().'"';
 	endforeach;
 	echo ' data-shape="'.($defaults['item-shape'] ?? 'round').'"';
+	echo ' data-format="'.($defaults['item-format'] ?? 'square').'"';
 	echo ' data-align="'.$block->logosalignment()->or($config['fields']['align-logos'] ?? 'center')->value().'"';
 	echo '>'."\n";
 

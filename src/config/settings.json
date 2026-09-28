@@ -247,6 +247,14 @@
 				"required": true,
 				"fixed": true
 			},
+			"item-format": {
+				"label": "kirbyblock-logocloud.item-format",
+				"options": [
+					"square",
+					"flexible"
+				],
+				"default": "square"
+			},
 			"item-shape": {
 				"options": [
 					"square",

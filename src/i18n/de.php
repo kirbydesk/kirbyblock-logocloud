@@ -13,6 +13,9 @@
 	'kirbyblock-logocloud.logo.link.help' => 'Optional. Das Logo verlinkt auf diese Website und öffnet sie in einem neuen Tab.',
 
 	'kirbyblock-logocloud.per-row' => 'Logos pro Reihe',
+	'kirbyblock-logocloud.item-format' => 'Format',
+	'kirbyblock-logocloud.item-format.square' => 'Quadratisch',
+	'kirbyblock-logocloud.item-format.flexible' => 'Flexibel',
 	'kirbyblock-logocloud.item-gap' => 'Horizontaler Abstand',
 	'kirbyblock-logocloud.item-row-gap' => 'Vertikaler Abstand',
 	'kirbyblock-logocloud.per-row.sm' => 'Logos pro Reihe (SM)',

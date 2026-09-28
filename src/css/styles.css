@@ -92,6 +92,25 @@ section[data-block="logocloud"] {
 	}
 }
 
+/* Format "flexible" (Project Wizard → Design): one height for all tiles,
+   each as wide as its logo; the logos run on and wrap (no "per row") */
+section[data-block="logocloud"] div[data-block="items"][data-format="flexible"] {
+	max-width: none;
+
+	[data-block="item"] {
+		flex: 0 0 auto;
+		height: var(--pwlogocloud-size);
+		aspect-ratio: auto;
+
+		img[data-field="logo"] {
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	/* round: a pill */
+	&[data-shape="round"] [data-block="item"] { border-radius: 999px; }
+}
+
 /* Logos per row - SM (base, like the grid) */
 section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="1"] { --pwlogocloud-per-row: 1; }
 section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="2"] { --pwlogocloud-per-row: 2; }
