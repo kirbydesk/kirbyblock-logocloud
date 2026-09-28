@@ -7,28 +7,14 @@ section[data-block="logocloud"][data-style="variant2"] [data-block="item"]   { b
 section[data-block="logocloud"][data-style="variant3"] [data-block="item"]   { background-color: var(--pwlogocloud-item-background-variant3); }
 
 section[data-block="logocloud"] {
-
 	/* -------------- Tagline Margins--------------*/
 	[data-field="tagline"] {
-		+ [data-field="heading"] {
-			margin-top: 0.5rem;
-		}
-		+ [data-field="textarea"],
-		+ [data-field="writer"],
-		+ [data-field="markdown"] {
-			margin-top: 0.3rem;
-		}
 		+ [data-block="items"] {
 			margin-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 	/* -------------- Heading Margins--------------*/
 	[data-field="heading"] {
-		+ [data-field="textarea"],
-		+ [data-field="writer"],
-		+ [data-field="markdown"] {
-			margin-top: 0.5rem;
-		}
 		+ [data-block="items"] {
 			margin-top: var(--pwlogocloud-item-text-gap);
 		}
