@@ -1,1 +1,421 @@
-(function(){"use strict";function l(e,t,n,a,s,r,o,d){var i=typeof e=="function"?e.options:e;return t&&(i.render=t,i.staticRenderFns=n,i._compiled=!0),r&&(i._scopeId="data-v-"+r),{exports:e,options:i}}const c={props:{value:String,icon:String,layout:String,design:String},methods:{go(e){this.design&&(e.stopPropagation(),this.$go("projectwizard/block/"+this.design))}}};var u=function(){var t=this,n=t._self._c;return n("div",{staticClass:"blockinfo"},[n("div",{class:{"is-link":t.design},attrs:{title:t.design?t.$t("pw.blockinfo.design"):null,role:t.design?"link":null},on:{click:t.go}},[n("svg",{staticClass:"k-icon",attrs:{"aria-hidden":"true"}},[n("use",{attrs:{"xlink:href":"#icon-"+t.icon}})]),t._v(" "+t._s(t.value)+" "),t.layout?n("span",[t._v("("+t._s(t.layout)+")")]):t._e()])])},g=[],f=l(c,u,g,!1,null,"1cafd427");const p=f.exports,h={props:{value:String,content:{type:Object,default:()=>({})},alignDefault:{type:String,default:"left"}},computed:{parsedData(){var t;const e=((t=this.content)==null?void 0:t.tagline)||this.value;if(!e)return{text:"",align:this.alignDefault};try{return typeof e=="string"?JSON.parse(e):e}catch{return{text:e,align:this.alignDefault}}},text(){const{text:e=""}=this.parsedData;return e},align(){const{align:e=this.alignDefault}=this.parsedData;return e}}};var _=function(){var t=this,n=t._self._c;return n("div",{staticClass:"pwTagline",attrs:{"data-align":t.align}},[t.text?n("div",{domProps:{innerHTML:t._s(t.text)}}):n("div",{staticClass:"placeholder"},[t._v(" "+t._s(t.$t("pw.field.tagline.placeholder"))+" ")])])},v=[],m=l(h,_,v,!1,null,"e6dd527a");const x=m.exports,b={props:{value:String,content:{type:Object,default:()=>({})},alignDefault:{type:String,default:null},sizeDefault:{type:String,default:null},textbackgroundDefault:{type:String,default:null},multilineDefault:{type:String,default:null},flourishDefault:{type:String,default:null}},computed:{parsedData(){var t;const e=((t=this.content)==null?void 0:t.heading)||this.value;if(!e)return{text:"",align:this.alignDefault};try{return typeof e=="string"?JSON.parse(e):e}catch{return{text:e,align:this.alignDefault}}},text(){const{text:e=""}=this.parsedData;return e},align(){const{align:e=this.alignDefault}=this.parsedData;return e},size(){const{size:e=this.sizeDefault}=this.parsedData;return e},textbackground(){const{textbackground:e=this.textbackgroundDefault}=this.parsedData;return e},multiline(){const{multiline:e=this.multilineDefault}=this.parsedData;return e},flourish(){const{flourish:e=this.flourishDefault}=this.parsedData;return e},textLines(){return this.text.split(/\r\n|\r|\n/).filter(e=>e!=="")}}};var y=function(){var t=this,n=t._self._c;return n("div",{staticClass:"pwHeading",attrs:{"data-align":t.align,"data-size":t.size}},[t.text?n("div",[t.multiline==="enabled"?[t._l(t.textLines,function(a,s){return[s>0?n("br",{key:"br-"+s}):t._e(),t.textbackground==="enabled"?n("span",{key:s,attrs:{"data-textbackground":""},domProps:{innerHTML:t._s(a)}}):n("span",{key:s,domProps:{innerHTML:t._s(a)}})]})]:[t.textbackground==="enabled"?n("span",{attrs:{"data-textbackground":""},domProps:{innerHTML:t._s(t.text)}}):n("span",{domProps:{innerHTML:t._s(t.text)}})],t.flourish==="enabled"?n("div",{attrs:{"data-flourish":"","data-align":t.align}}):t._e()],2):n("div",{staticClass:"placeholder"},[t._v(" "+t._s(t.$t("pw.field.heading.placeholder"))+" ")])])},w=[],C=l(b,y,w,!1,null,"39f97ddd");const k=C.exports,D={props:{value:String,align:{type:String,default:"left"},size:{type:String,default:null}},computed:{text(){return this.value||""}},methods:{nl2br(e){return e?e.replace(/\n/g,"<br>"):""}}};var $=function(){var t=this,n=t._self._c;return n("div",{staticClass:"pwtext",attrs:{"data-align":t.align,"data-size":t.size}},[t.text?n("div",{domProps:{innerHTML:t._s(t.nl2br(t.text))}}):n("div",{staticClass:"placeholder"},[t._v(" "+t._s(t.$t("pw.field.text-textarea.placeholder"))+" ")])])},z=[],S=l(D,$,z,!1,null,"d582e5dd");const M=S.exports,L={props:{value:String,align:{type:String,default:"left"},size:{type:String,default:null}}};var P=function(){var t=this,n=t._self._c;return n("div",{staticClass:"pwtext",attrs:{"data-align":t.align,"data-size":t.size}},[t.value?n("div",{domProps:{innerHTML:t._s(t.value)}}):n("div",{staticClass:"placeholder"},[t._v(" "+t._s(t.$t("pw.field.text-writer.placeholder"))+" ")])])},T=[],H=l(L,P,T,!1,null,"aa0313cd");const j=H.exports,F={components:{PwTextarea:M,PwWriter:j},props:{content:{type:Object,default:()=>({})},alignDefault:{type:String,default:"left"}},computed:{parsed(){var t;const e=(t=this.content)==null?void 0:t.editor;if(!e)return{mode:"textarea",text:"",align:this.alignDefault};try{const n=typeof e=="string"?JSON.parse(e):e,a=n.mode||"textarea";return{mode:a,text:n[a]||"",align:n.align||this.alignDefault,size:n.size||null}}catch{return{mode:"textarea",text:"",align:this.alignDefault}}},mode(){return this.parsed.mode},text(){return this.parsed.text},align(){return this.parsed.align||this.alignDefault},size(){return this.parsed.size||null}}};var O=function(){var t=this,n=t._self._c;return n("div",{staticClass:"pwEditor"},[t.mode==="textarea"?n("pw-textarea",{attrs:{value:t.text,align:t.align,size:t.size}}):t.mode==="writer"?n("pw-writer",{attrs:{value:t.text,align:t.align,size:t.size}}):n("div",{staticClass:"placeholder"},[t._v(" "+t._s(t.$t("pw.field.text-textarea.placeholder"))+" ")])],1)},N=[],R=l(F,O,N,!1,null,null);const V=R.exports,Z={components:{pwBlockinfo:p,pwTagline:x,pwHeading:k,pwEditor:V},mixins:[{computed:{gridVars(){const e=t=>{const n=Number(t);return n===0?"auto":n+1};return{"--grid-start-sm":e(this.content.gridoffsetsm),"--grid-span-sm":Number(this.content.gridsizesm),"--grid-start-md":e(this.content.gridoffsetmd),"--grid-span-md":Number(this.content.gridsizemd),"--grid-start-lg":e(this.content.gridoffsetlg),"--grid-span-lg":Number(this.content.gridsizelg),"--grid-start-xl":e(this.content.gridoffsetxl),"--grid-span-xl":Number(this.content.gridsizexl)}}}},{data(){return{colors:null}},async created(){try{this.colors=await this.$api.get("pagewizard/colors")}catch{this.colors=null}},computed:{colorVars(){if(!this.colors)return{};const e=this.content.theme||"default",t={};if(e==="custom"){for(const[a,s]of Object.entries(this.colors.default))t["--"+a]=s;this.content.textcolor&&(t["--pw-color-text"]=this.content.textcolor,t["--pw-color-heading"]=this.content.textcolor,t["--pw-color-tagline"]=this.content.textcolor,t["--pw-color-link"]=this.content.textcolor,t["--pw-color-quote"]=this.content.textcolor,t["--pw-color-cite"]=this.content.textcolor),this.content.backgroundcolor&&(t["--pw-color-block-background"]=this.content.backgroundcolor);const n=this.content.buttonstyle||"default";if(n!=="default"&&this.colors[n]){const a=Object.keys(this.colors[n]).filter(s=>s.startsWith("pw-color-button"));for(const s of a)t["--"+s]=this.colors[n][s]}}else{const n=this.colors[e],a=n?{...this.colors.default,...n}:this.colors.default;for(const[s,r]of Object.entries(a))t["--"+s]=r}return t}}}],data(){return{settings:{},fieldDefaults:{},defaults:{},blockValues:{}}},computed:{logos(){return(this.content.logos||[]).filter(e=>e.url)},logoStyle(){var r,o,d,i;if((this.defaults["item-shape"]||"round")!=="custom")return{};const e=(d=(o=(r=this.blockValues.defaults)==null?void 0:r.items)==null?void 0:o.vars)==null?void 0:d["item-radius"],t=(i=this.blockValues.overrides)==null?void 0:i["item-radius"],n=Array.isArray(t)?t:(e==null?void 0:e.value)||[],a=["top-left","top-right","bottom-left","bottom-right"],s={};return a.forEach((I,W)=>{s[`border-${I}-radius`]=parseFloat(n[W])>0?"50%":"0"}),s}},async created(){try{const e=await this.$api.get("pagewizard/settings/pwlogocloud");this.settings=e.settings,this.fieldDefaults=e.fields||{},this.defaults=e.defaults||{},this.blockValues=await this.$api.get("projectwizard/values/pwlogocloud")}catch{this.settings={}}}};var G=function(){var t=this,n=t._self._c;return n("div",{staticClass:"pwPreview",style:t.colorVars,attrs:{"data-kirbyblock":"logocloud","data-margintop":t.content.margintop===!0?"true":null,"data-marginbottom":t.content.marginbottom===!0?"true":null},on:{dblclick:t.open}},[n("pwBlockinfo",{attrs:{value:t.$t("kirbyblock-logocloud.name"),icon:"logocloud"}}),n("div",{staticClass:"pwGrid"},[n("div",{staticClass:"pwGridItem",style:t.gridVars,attrs:{"data-paddingtop":t.content.paddingtop||t.defaults["padding-top"]||null,"data-paddingright":(t.content.paddingright!==void 0?t.content.paddingright:t.defaults["padding-right"])===!0?"true":null,"data-paddingbottom":t.content.paddingbottom||t.defaults["padding-bottom"]||null,"data-paddingleft":(t.content.paddingleft!==void 0?t.content.paddingleft:t.defaults["padding-left"])===!0?"true":null}},[n("div",{staticClass:"contents"},[t.settings.tagline?n("pwTagline",{attrs:{value:t.content.tagline,alignDefault:t.fieldDefaults["align-tagline"]}}):t._e(),t.settings.heading?n("pwHeading",{attrs:{value:t.content.heading,"data-level":t.content.level,alignDefault:t.fieldDefaults["align-heading"],sizeDefault:t.fieldDefaults["size-heading"],textbackgroundDefault:t.fieldDefaults["textbackground-heading"],multilineDefault:t.fieldDefaults["multiline-heading"],flourishDefault:t.fieldDefaults["flourish-heading"]}}):t._e(),t.settings.editor?n("pwEditor",{attrs:{content:t.content,alignDefault:t.fieldDefaults["align-editor"]}}):t._e(),t.logos.length?n("div",{staticClass:"pwLogos",attrs:{"data-shape":t.defaults["item-shape"]||"round","data-align":t.content.logosalignment||t.fieldDefaults["align-logos"]||"center"}},t._l(t.logos,function(a){return n("div",{key:a.id,staticClass:"pwLogo",style:t.logoStyle},[n("img",{attrs:{src:a.url,alt:""}})])}),0):n("div",{staticClass:"pwLogos placeholder"},[t._v(t._s(t.$t("kirbyblock-logocloud.logos.empty")))])],1)])])],1)},J=[],A=l(Z,G,J,!1,null,"f1dc0dbe");const B=A.exports;panel.plugin("kirbydesk/kirbyblock-logocloud",{blocks:{pwlogocloud:B},icons:{logocloud:'<path d="M7 3C9.20914 3 11 4.79086 11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3ZM7 5C5.89543 5 5 5.89543 5 7C5 8.10457 5.89543 9 7 9C8.10457 9 9 8.10457 9 7C9 5.89543 8.10457 5 7 5ZM17 3C19.2091 3 21 4.79086 21 7C21 9.20914 19.2091 11 17 11C14.7909 11 13 9.20914 13 7C13 4.79086 14.7909 3 17 3ZM17 5C15.8954 5 15 5.89543 15 7C15 8.10457 15.8954 9 17 9C18.1046 9 19 8.10457 19 7C19 5.89543 18.1046 5 17 5ZM7 13C9.20914 13 11 14.7909 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13ZM7 15C5.89543 15 5 15.8954 5 17C5 18.1046 5.89543 19 7 19C8.10457 19 9 18.1046 9 17C9 15.8954 8.10457 15 7 15ZM17 13C19.2091 13 21 14.7909 21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13ZM17 15C15.8954 15 15 15.8954 15 17C15 18.1046 15.8954 19 17 19C18.1046 19 19 18.1046 19 17C19 15.8954 18.1046 15 17 15Z"/>'}})})();
+(function() {
+  "use strict";
+  function normalizeComponent(scriptExports, render, staticRenderFns, functionalTemplate, injectStyles, scopeId, moduleIdentifier, shadowMode) {
+    var options = typeof scriptExports === "function" ? scriptExports.options : scriptExports;
+    if (render) {
+      options.render = render;
+      options.staticRenderFns = staticRenderFns;
+      options._compiled = true;
+    }
+    if (scopeId) {
+      options._scopeId = "data-v-" + scopeId;
+    }
+    return {
+      exports: scriptExports,
+      options
+    };
+  }
+  const _sfc_main$6 = {
+    props: {
+      value: String,
+      icon: String,
+      layout: String,
+      // the block type: a button to its design in the Project Wizard
+      design: String
+    },
+    methods: {
+      go(event) {
+        if (!this.design) return;
+        event.stopPropagation();
+        this.$go("projectwizard/block/" + this.design);
+      }
+    }
+  };
+  var _sfc_render$6 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "blockinfo" }, [_c("div", { class: { "is-link": _vm.design }, attrs: { "title": _vm.design ? _vm.$t("pw.blockinfo.design") : null, "role": _vm.design ? "link" : null }, on: { "click": _vm.go } }, [_c("svg", { staticClass: "k-icon", attrs: { "aria-hidden": "true" } }, [_c("use", { attrs: { "xlink:href": "#icon-" + _vm.icon } })]), _vm._v(" " + _vm._s(_vm.value) + " "), _vm.layout ? _c("span", [_vm._v("(" + _vm._s(_vm.layout) + ")")]) : _vm._e()])]);
+  };
+  var _sfc_staticRenderFns$6 = [];
+  _sfc_render$6._withStripped = true;
+  var __component__$6 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$6,
+    _sfc_render$6,
+    _sfc_staticRenderFns$6,
+    false,
+    null,
+    "26526d24"
+  );
+  __component__$6.options.__file = "/Users/christian/Projects/pluginsources/kirby-pagewizard/src/components/blockinfo.vue";
+  const pwBlockinfo = __component__$6.exports;
+  const _sfc_main$5 = {
+    props: {
+      value: String,
+      content: {
+        type: Object,
+        default: () => ({})
+      },
+      alignDefault: { type: String, default: "left" }
+    },
+    computed: {
+      parsedData() {
+        var _a;
+        const val = ((_a = this.content) == null ? void 0 : _a.tagline) || this.value;
+        if (!val) return { text: "", align: this.alignDefault };
+        try {
+          return typeof val === "string" ? JSON.parse(val) : val;
+        } catch (e) {
+          return { text: val, align: this.alignDefault };
+        }
+      },
+      text() {
+        const { text = "" } = this.parsedData;
+        return text;
+      },
+      align() {
+        const { align = this.alignDefault } = this.parsedData;
+        return align;
+      }
+    }
+  };
+  var _sfc_render$5 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "pwTagline", attrs: { "data-align": _vm.align } }, [_vm.text ? _c("div", { domProps: { "innerHTML": _vm._s(_vm.text) } }) : _c("div", { staticClass: "placeholder" }, [_vm._v(" " + _vm._s(_vm.$t("pw.field.tagline.placeholder")) + " ")])]);
+  };
+  var _sfc_staticRenderFns$5 = [];
+  _sfc_render$5._withStripped = true;
+  var __component__$5 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$5,
+    _sfc_render$5,
+    _sfc_staticRenderFns$5,
+    false,
+    null,
+    "2287a490"
+  );
+  __component__$5.options.__file = "/Users/christian/Projects/pluginsources/kirby-pagewizard/src/components/tagline.vue";
+  const pwTagline = __component__$5.exports;
+  const _sfc_main$4 = {
+    props: {
+      value: String,
+      content: {
+        type: Object,
+        default: () => ({})
+      },
+      alignDefault: { type: String, default: null },
+      sizeDefault: { type: String, default: null },
+      textbackgroundDefault: { type: String, default: null },
+      multilineDefault: { type: String, default: null },
+      flourishDefault: { type: String, default: null }
+    },
+    computed: {
+      parsedData() {
+        var _a;
+        const val = ((_a = this.content) == null ? void 0 : _a.heading) || this.value;
+        if (!val) return { text: "", align: this.alignDefault };
+        try {
+          return typeof val === "string" ? JSON.parse(val) : val;
+        } catch (e) {
+          return { text: val, align: this.alignDefault };
+        }
+      },
+      text() {
+        const { text = "" } = this.parsedData;
+        return text;
+      },
+      align() {
+        const { align = this.alignDefault } = this.parsedData;
+        return align;
+      },
+      size() {
+        const { size = this.sizeDefault } = this.parsedData;
+        return size;
+      },
+      textbackground() {
+        const { textbackground = this.textbackgroundDefault } = this.parsedData;
+        return textbackground;
+      },
+      multiline() {
+        const { multiline = this.multilineDefault } = this.parsedData;
+        return multiline;
+      },
+      flourish() {
+        const { flourish = this.flourishDefault } = this.parsedData;
+        return flourish;
+      },
+      textLines() {
+        return this.text.split(/\r\n|\r|\n/).filter((l) => l !== "");
+      }
+    }
+  };
+  var _sfc_render$4 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "pwHeading", attrs: { "data-align": _vm.align, "data-size": _vm.size } }, [_vm.text ? _c("div", [_vm.multiline === "enabled" ? [_vm._l(_vm.textLines, function(line, i) {
+      return [i > 0 ? _c("br", { key: "br-" + i }) : _vm._e(), _vm.textbackground === "enabled" ? _c("span", { key: i, attrs: { "data-textbackground": "" }, domProps: { "innerHTML": _vm._s(line) } }) : _c("span", { key: i, domProps: { "innerHTML": _vm._s(line) } })];
+    })] : [_vm.textbackground === "enabled" ? _c("span", { attrs: { "data-textbackground": "" }, domProps: { "innerHTML": _vm._s(_vm.text) } }) : _c("span", { domProps: { "innerHTML": _vm._s(_vm.text) } })], _vm.flourish === "enabled" ? _c("div", { attrs: { "data-flourish": "", "data-align": _vm.align } }) : _vm._e()], 2) : _c("div", { staticClass: "placeholder" }, [_vm._v(" " + _vm._s(_vm.$t("pw.field.heading.placeholder")) + " ")])]);
+  };
+  var _sfc_staticRenderFns$4 = [];
+  _sfc_render$4._withStripped = true;
+  var __component__$4 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$4,
+    _sfc_render$4,
+    _sfc_staticRenderFns$4,
+    false,
+    null,
+    "ad832d63"
+  );
+  __component__$4.options.__file = "/Users/christian/Projects/pluginsources/kirby-pagewizard/src/components/heading.vue";
+  const pwHeading = __component__$4.exports;
+  const _sfc_main$3 = {
+    props: {
+      value: String,
+      align: { type: String, default: "left" },
+      size: { type: String, default: null }
+    },
+    computed: {
+      text() {
+        return this.value || "";
+      }
+    },
+    methods: {
+      nl2br(text) {
+        if (!text) return "";
+        return text.replace(/\n/g, "<br>");
+      }
+    }
+  };
+  var _sfc_render$3 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "pwtext", attrs: { "data-align": _vm.align, "data-size": _vm.size } }, [_vm.text ? _c("div", { domProps: { "innerHTML": _vm._s(_vm.nl2br(_vm.text)) } }) : _c("div", { staticClass: "placeholder" }, [_vm._v(" " + _vm._s(_vm.$t("pw.field.text-textarea.placeholder")) + " ")])]);
+  };
+  var _sfc_staticRenderFns$3 = [];
+  _sfc_render$3._withStripped = true;
+  var __component__$3 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$3,
+    _sfc_render$3,
+    _sfc_staticRenderFns$3,
+    false,
+    null,
+    "05c2d6ed"
+  );
+  __component__$3.options.__file = "/Users/christian/Projects/pluginsources/kirby-pagewizard/src/components/textarea.vue";
+  const PwTextarea = __component__$3.exports;
+  const _sfc_main$2 = {
+    props: {
+      value: String,
+      align: { type: String, default: "left" },
+      size: { type: String, default: null }
+    }
+  };
+  var _sfc_render$2 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "pwtext", attrs: { "data-align": _vm.align, "data-size": _vm.size } }, [_vm.value ? _c("div", { domProps: { "innerHTML": _vm._s(_vm.value) } }) : _c("div", { staticClass: "placeholder" }, [_vm._v(" " + _vm._s(_vm.$t("pw.field.text-writer.placeholder")) + " ")])]);
+  };
+  var _sfc_staticRenderFns$2 = [];
+  _sfc_render$2._withStripped = true;
+  var __component__$2 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$2,
+    _sfc_render$2,
+    _sfc_staticRenderFns$2,
+    false,
+    null,
+    "fa3feda4"
+  );
+  __component__$2.options.__file = "/Users/christian/Projects/pluginsources/kirby-pagewizard/src/components/writer.vue";
+  const PwWriter = __component__$2.exports;
+  const _sfc_main$1 = {
+    components: { PwTextarea, PwWriter },
+    props: {
+      content: {
+        type: Object,
+        default: () => ({})
+      },
+      alignDefault: { type: String, default: "left" }
+    },
+    computed: {
+      parsed() {
+        var _a;
+        const val = (_a = this.content) == null ? void 0 : _a.editor;
+        if (!val) return { mode: "textarea", text: "", align: this.alignDefault };
+        try {
+          const data = typeof val === "string" ? JSON.parse(val) : val;
+          const mode = data.mode || "textarea";
+          return { mode, text: data[mode] || "", align: data.align || this.alignDefault, size: data.size || null };
+        } catch (e) {
+          return { mode: "textarea", text: "", align: this.alignDefault };
+        }
+      },
+      mode() {
+        return this.parsed.mode;
+      },
+      text() {
+        return this.parsed.text;
+      },
+      align() {
+        return this.parsed.align || this.alignDefault;
+      },
+      size() {
+        return this.parsed.size || null;
+      }
+    }
+  };
+  var _sfc_render$1 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "pwEditor" }, [_vm.mode === "textarea" ? _c("pw-textarea", { attrs: { "value": _vm.text, "align": _vm.align, "size": _vm.size } }) : _vm.mode === "writer" ? _c("pw-writer", { attrs: { "value": _vm.text, "align": _vm.align, "size": _vm.size } }) : _c("div", { staticClass: "placeholder" }, [_vm._v(" " + _vm._s(_vm.$t("pw.field.text-textarea.placeholder")) + " ")])], 1);
+  };
+  var _sfc_staticRenderFns$1 = [];
+  _sfc_render$1._withStripped = true;
+  var __component__$1 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$1,
+    _sfc_render$1,
+    _sfc_staticRenderFns$1,
+    false,
+    null,
+    null
+  );
+  __component__$1.options.__file = "/Users/christian/Projects/pluginsources/kirby-pagewizard/src/components/editor.vue";
+  const pwEditor = __component__$1.exports;
+  const pwGridStyle = {
+    computed: {
+      gridVars() {
+        const offset = (val) => {
+          const n = Number(val);
+          return n === 0 ? "auto" : n + 1;
+        };
+        return {
+          "--grid-start-sm": offset(this.content.gridoffsetsm),
+          "--grid-span-sm": Number(this.content.gridsizesm),
+          "--grid-start-md": offset(this.content.gridoffsetmd),
+          "--grid-span-md": Number(this.content.gridsizemd),
+          "--grid-start-lg": offset(this.content.gridoffsetlg),
+          "--grid-span-lg": Number(this.content.gridsizelg),
+          "--grid-start-xl": offset(this.content.gridoffsetxl),
+          "--grid-span-xl": Number(this.content.gridsizexl)
+        };
+      }
+    }
+  };
+  const pwColorStyle = {
+    data() {
+      return {
+        colors: null
+      };
+    },
+    async created() {
+      try {
+        this.colors = await this.$api.get("pagewizard/colors");
+      } catch (e) {
+        this.colors = null;
+      }
+    },
+    computed: {
+      colorVars() {
+        if (!this.colors) return {};
+        const style = this.content.theme || "default";
+        const vars = {};
+        if (style === "custom") {
+          for (const [key, value] of Object.entries(this.colors.default)) {
+            vars["--" + key] = value;
+          }
+          if (this.content.textcolor) {
+            vars["--pw-color-text"] = this.content.textcolor;
+            vars["--pw-color-heading"] = this.content.textcolor;
+            vars["--pw-color-tagline"] = this.content.textcolor;
+            vars["--pw-color-link"] = this.content.textcolor;
+            vars["--pw-color-quote"] = this.content.textcolor;
+            vars["--pw-color-cite"] = this.content.textcolor;
+          }
+          if (this.content.backgroundcolor) {
+            vars["--pw-color-block-background"] = this.content.backgroundcolor;
+          }
+          const btnStyle = this.content.buttonstyle || "default";
+          if (btnStyle !== "default" && this.colors[btnStyle]) {
+            const btnKeys = Object.keys(this.colors[btnStyle]).filter((k) => k.startsWith("pw-color-button"));
+            for (const key of btnKeys) {
+              vars["--" + key] = this.colors[btnStyle][key];
+            }
+          }
+        } else {
+          const themePalette = this.colors[style];
+          const palette = themePalette ? { ...this.colors.default, ...themePalette } : this.colors.default;
+          for (const [key, value] of Object.entries(palette)) {
+            vars["--" + key] = value;
+          }
+        }
+        return vars;
+      }
+    }
+  };
+  const _sfc_main = {
+    components: {
+      pwBlockinfo,
+      pwTagline,
+      pwHeading,
+      pwEditor
+    },
+    mixins: [pwGridStyle, pwColorStyle],
+    data() {
+      return {
+        settings: {},
+        fieldDefaults: {},
+        defaults: {},
+        blockValues: {}
+      };
+    },
+    computed: {
+      logos() {
+        return (this.content.logos || []).filter((logo) => logo.url);
+      },
+      // Custom shape: every corner with a radius above 0 is shown round (like
+      // "round"), corners with 0 stay square — the exact size is not previewed
+      logoStyle() {
+        var _a, _b, _c, _d;
+        if ((this.defaults["item-shape"] || "round") !== "custom") return {};
+        const def = (_c = (_b = (_a = this.blockValues.defaults) == null ? void 0 : _a.items) == null ? void 0 : _b.vars) == null ? void 0 : _c["item-radius"];
+        const ov = (_d = this.blockValues.overrides) == null ? void 0 : _d["item-radius"];
+        const values = Array.isArray(ov) ? ov : (def == null ? void 0 : def.value) || [];
+        const corners = ["top-left", "top-right", "bottom-left", "bottom-right"];
+        const style = {};
+        corners.forEach((corner, i) => {
+          style[`border-${corner}-radius`] = parseFloat(values[i]) > 0 ? "50%" : "0";
+        });
+        return style;
+      }
+    },
+    async created() {
+      try {
+        const response = await this.$api.get("pagewizard/settings/pwlogocloud");
+        this.settings = response.settings;
+        this.fieldDefaults = response.fields || {};
+        this.defaults = response.defaults || {};
+        this.blockValues = await this.$api.get("projectwizard/values/pwlogocloud");
+      } catch (e) {
+        this.settings = {};
+      }
+    }
+  };
+  var _sfc_render = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "pwPreview", style: _vm.colorVars, attrs: { "data-kirbyblock": "logocloud", "data-margintop": _vm.content.margintop === true ? "true" : null, "data-marginbottom": _vm.content.marginbottom === true ? "true" : null }, on: { "dblclick": _vm.open } }, [_c("pwBlockinfo", { attrs: { "value": _vm.$t("kirbyblock-logocloud.name"), "icon": "logocloud" } }), _c("div", { staticClass: "pwGrid" }, [_c("div", { staticClass: "pwGridItem", style: _vm.gridVars, attrs: { "data-paddingtop": _vm.content.paddingtop || _vm.defaults["padding-top"] || null, "data-paddingright": (_vm.content.paddingright !== void 0 ? _vm.content.paddingright : _vm.defaults["padding-right"]) === true ? "true" : null, "data-paddingbottom": _vm.content.paddingbottom || _vm.defaults["padding-bottom"] || null, "data-paddingleft": (_vm.content.paddingleft !== void 0 ? _vm.content.paddingleft : _vm.defaults["padding-left"]) === true ? "true" : null } }, [_c("div", { staticClass: "contents" }, [_vm.settings.tagline ? _c("pwTagline", { attrs: { "value": _vm.content.tagline, "alignDefault": _vm.fieldDefaults["align-tagline"] } }) : _vm._e(), _vm.settings.heading ? _c("pwHeading", { attrs: { "value": _vm.content.heading, "data-level": _vm.content.level, "alignDefault": _vm.fieldDefaults["align-heading"], "sizeDefault": _vm.fieldDefaults["size-heading"], "textbackgroundDefault": _vm.fieldDefaults["textbackground-heading"], "multilineDefault": _vm.fieldDefaults["multiline-heading"], "flourishDefault": _vm.fieldDefaults["flourish-heading"] } }) : _vm._e(), _vm.settings.editor ? _c("pwEditor", { attrs: { "content": _vm.content, "alignDefault": _vm.fieldDefaults["align-editor"] } }) : _vm._e(), _vm.logos.length ? _c("div", { staticClass: "pwLogos", attrs: { "data-shape": _vm.defaults["item-shape"] || "round", "data-align": _vm.content.logosalignment || _vm.fieldDefaults["align-logos"] || "center" } }, _vm._l(_vm.logos, function(logo) {
+      return _c("div", { key: logo.id, staticClass: "pwLogo", style: _vm.logoStyle }, [_c("img", { attrs: { "src": logo.url, "alt": "" } })]);
+    }), 0) : _c("div", { staticClass: "pwLogos placeholder" }, [_vm._v(_vm._s(_vm.$t("kirbyblock-logocloud.logos.empty")))])], 1)])])], 1);
+  };
+  var _sfc_staticRenderFns = [];
+  _sfc_render._withStripped = true;
+  var __component__ = /* @__PURE__ */ normalizeComponent(
+    _sfc_main,
+    _sfc_render,
+    _sfc_staticRenderFns,
+    false,
+    null,
+    "823ce87b"
+  );
+  __component__.options.__file = "/Users/christian/Projects/pluginsources/kirbyblock-logocloud/src/blocks/index.vue";
+  const pwlogocloud = __component__.exports;
+  panel.plugin("kirbydesk/kirbyblock-logocloud", {
+    blocks: {
+      pwlogocloud
+    },
+    icons: {
+      "logocloud": '<path d="M7 3C9.20914 3 11 4.79086 11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3ZM7 5C5.89543 5 5 5.89543 5 7C5 8.10457 5.89543 9 7 9C8.10457 9 9 8.10457 9 7C9 5.89543 8.10457 5 7 5ZM17 3C19.2091 3 21 4.79086 21 7C21 9.20914 19.2091 11 17 11C14.7909 11 13 9.20914 13 7C13 4.79086 14.7909 3 17 3ZM17 5C15.8954 5 15 5.89543 15 7C15 8.10457 15.8954 9 17 9C18.1046 9 19 8.10457 19 7C19 5.89543 18.1046 5 17 5ZM7 13C9.20914 13 11 14.7909 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13ZM7 15C5.89543 15 5 15.8954 5 17C5 18.1046 5.89543 19 7 19C8.10457 19 9 18.1046 9 17C9 15.8954 8.10457 15 7 15ZM17 13C19.2091 13 21 14.7909 21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13ZM17 15C15.8954 15 15 15.8954 15 17C15 18.1046 15.8954 19 17 19C18.1046 19 19 18.1046 19 17C19 15.8954 18.1046 15 17 15Z"/>'
+    }
+  });
+})();
