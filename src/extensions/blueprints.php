@@ -45,7 +45,7 @@ return [
 				]
 			),
 			'layoutExtras' => [
-				'headlinePerRow' => ['type' => 'headline', 'label' => 'kirbyblock-logocloud.per-row'],
+				'headlinePerRow' => ['type' => 'pwbreakpoints', 'group' => 'logos', 'label' => 'kirbyblock-logocloud.per-row'],
 				'logosSm'        => $perRow('sm'),
 				'logosMd'        => $perRow('md'),
 				'logosLg'        => $perRow('lg'),
