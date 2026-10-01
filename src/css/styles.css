@@ -10,13 +10,13 @@ section[data-block="logocloud"] {
 	/* -------------- Tagline Margins--------------*/
 	[data-field="tagline"] {
 		+ [data-block="items"] {
-			margin-top: var(--pwlogocloud-item-text-gap);
+			padding-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 	/* -------------- Heading Margins--------------*/
 	[data-field="heading"] {
 		+ [data-block="items"] {
-			margin-top: var(--pwlogocloud-item-text-gap);
+			padding-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 	/* -------------- Texts Margins--------------*/
@@ -24,7 +24,7 @@ section[data-block="logocloud"] {
 	[data-field="writer"],
 	[data-field="markdown"] {
 		+ [data-block="items"] {
-			margin-top: var(--pwlogocloud-item-text-gap);
+			padding-top: var(--pwlogocloud-item-text-gap);
 		}
 	}
 
@@ -144,9 +144,3 @@ section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="8"] { -
 	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="8"] { --pwlogocloud-per-row: 8; }
 }
 
-/* the intro's last element: no space below of its own before the logos –
-   there only the gap to the intro applies (Project Wizard → Design ›
-   Spacing); the elements' space below applies within the intro */
-section[data-block="logocloud"][data-block] :is([data-field="tagline"], [data-field="heading"], [data-field="textarea"], [data-field="writer"], [data-field="markdown"]):has(+ [data-block="items"]):not([data-block="item"] *) {
-	margin-bottom: 0;
-}
