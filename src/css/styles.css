@@ -144,3 +144,71 @@ section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="8"] { -
 	section[data-block="logocloud"] div[data-block="items"][data-per-row-xl="8"] { --pwlogocloud-per-row: 8; }
 }
 
+/*-----------------------------------------------------------------------------
+	Display "marquee": one row running endlessly from right to left. The
+	snippet repeats the logos and then all of them once more; the track
+	moves by half its length (the jump back can't be seen). Its speed and
+	edges: Project Wizard → Logo cloud › Design
+-----------------------------------------------------------------------------*/
+section[data-block="logocloud"] div[data-block="items"][data-display="marquee"] {
+	display: block;
+	max-width: none;
+	overflow: hidden;
+
+	/* soft edges: the logos fade out on both sides */
+	&[data-edges="soft"] {
+		-webkit-mask-image: linear-gradient(to right, transparent, #000 5rem, #000 calc(100% - 5rem), transparent);
+		mask-image: linear-gradient(to right, transparent, #000 5rem, #000 calc(100% - 5rem), transparent);
+	}
+
+	[data-marquee-track] {
+		display: flex;
+		align-items: center;
+		width: max-content;
+		/* the time for all logos once – the repeated ones take as long more */
+		animation: pwlogocloud-marquee calc(var(--pwlogocloud-marquee-duration, 30s) * var(--pwlogocloud-marquee-repeat, 1)) linear infinite;
+	}
+	/* (the gap after every logo, also the last: the halves are the same length) */
+	[data-block="item"] {
+		margin-right: var(--pwlogocloud-item-gap, 1.5rem);
+	}
+	/* held while the mouse is on it or a logo has the focus – to click a link */
+	&:hover [data-marquee-track],
+	&:focus-within [data-marquee-track] {
+		animation-play-state: paused;
+	}
+}
+
+@keyframes pwlogocloud-marquee {
+	to { transform: translateX(-50%); }
+}
+
+/* "Reduce motion" in the system: the logos stand still, as a grid */
+@media (prefers-reduced-motion: reduce) {
+	section[data-block="logocloud"] div[data-block="items"][data-display="marquee"] {
+		/* (the edges' attribute as well – the soft edges are set with it) */
+		&,
+		&[data-edges] {
+			-webkit-mask-image: none;
+			mask-image: none;
+		}
+
+		[data-marquee-track] {
+			width: auto;
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: var(--pwlogocloud-item-row-gap);
+			animation: none;
+		}
+		[data-block="item"] {
+			margin-right: 0;
+		}
+		[data-marquee-track] {
+			column-gap: var(--pwlogocloud-item-gap, 1.5rem);
+		}
+		[data-block="item"][aria-hidden="true"] {
+			display: none;
+		}
+	}
+}
+

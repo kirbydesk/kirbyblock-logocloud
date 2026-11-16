@@ -45,7 +45,21 @@ return [
 				]
 			),
 			'layoutExtras' => [
-				'headlinePerRow' => ['type' => 'pwbreakpoints', 'group' => 'logos', 'label' => 'kirbyblock-logocloud.per-row'],
+				// grid, or one row running endlessly (its speed and edges: Project
+				// Wizard → Logo cloud › Design)
+				'logoDisplay' => [
+					'label'    => 'kirbyblock-logocloud.logo-display',
+					'type'     => 'toggles',
+					'default'  => $defaults['logo-display'] ?? 'grid',
+					'required' => true,
+					'help'     => 'kirbyblock-logocloud.logo-display.help',
+					'options'  => [
+						['value' => 'grid',    'text' => ['*' => 'kirbyblock-logocloud.logo-display.grid']],
+						['value' => 'marquee', 'text' => ['*' => 'kirbyblock-logocloud.logo-display.marquee']],
+					],
+				],
+				// (running: no logos per row)
+				'headlinePerRow' => ['type' => 'pwbreakpoints', 'group' => 'logos', 'label' => 'kirbyblock-logocloud.per-row', 'unless' => ['logoDisplay' => 'marquee']],
 				'logosSm'        => $perRow('sm'),
 				'logosMd'        => $perRow('md'),
 				'logosLg'        => $perRow('lg'),

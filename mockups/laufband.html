@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo-Laufband</title>
+<style>
+  :root { --bg: #efefef; --text: #16171a; --dim: #6b6f76; --line: #e8e8e8; --labelbg: #fafafa; --mono: ui-monospace, Menlo, monospace; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #2a2a2e; color: var(--text); padding: 24px 16px 60px; }
+  h1 { font-size: 18px; color: #f2f2f4; font-weight: 600; }
+  h2 { font-size: 13px; color: #a8a8ae; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; margin: 22px 0 8px; }
+  .lead { color: #a8a8ae; margin: 4px 0 12px; max-width: 1100px; }
+  .grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; max-width: 1100px; }
+  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+  .box { background: var(--bg); border-radius: 10px; padding: 18px 22px 22px; min-width: 0; }
+  .boxt { font-size: 12px; color: var(--dim); margin-bottom: 12px; }
+  .dtabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid #ddd; }
+  .dtabs span { padding: 5px 10px; font-size: 13px; color: var(--dim); }
+  .dtabs span.on { color: var(--text); border-bottom: 2px solid var(--text); font-weight: 500; }
+  .f { margin-bottom: 16px; }
+  .f.new { outline: 2px dashed #ff9f0a; outline-offset: 6px; border-radius: 4px; }
+  .lab { font-weight: 500; font-size: 13px; margin-bottom: 6px; }
+  .help { font-size: 12px; color: var(--dim); margin-top: 6px; line-height: 1.45; }
+  .tog { display: inline-flex; background: #fff; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,.08); padding: 2px; gap: 2px; }
+  .tog span { font-size: 12px; padding: 5px 12px; border-radius: 3px; cursor: pointer; }
+  .tog span.on { background: #16171a; color: #fff; }
+  .ranges { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .rng { background: #fff; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,.08); padding: 6px 10px; font-size: 12px; display: flex; justify-content: space-between; }
+  .card { background: #fff; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+  .row { display: grid; grid-template-columns: 170px 1fr; min-height: 42px; }
+  .row + .row { border-top: 1px solid var(--line); }
+  .rl { background: var(--labelbg); border-right: 1px solid var(--line); font: 12px var(--mono); color: var(--dim); padding: 0 12px; display: flex; align-items: center; }
+  .rv { display: flex; align-items: center; gap: 10px; padding: 6px 12px; }
+  .rv input[type=range] { flex: 1; }
+  .rv b { font: 13px var(--mono); font-weight: 400; min-width: 46px; text-align: right; }
+  .sec h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  /* website */
+  .site { max-width: 1100px; background: #fff; border-radius: 10px; padding: 46px 0 50px; margin-top: 4px; }
+  .site .tl { text-align: center; color: #888; font-size: 13px; letter-spacing: .04em; margin-bottom: 26px; }
+  .inner { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .marquee { overflow: hidden; }
+  .marquee.soft { -webkit-mask-image: linear-gradient(to right, transparent, #000 80px, #000 calc(100% - 80px), transparent); mask-image: linear-gradient(to right, transparent, #000 80px, #000 calc(100% - 80px), transparent); }
+  .track { display: flex; width: max-content; animation: run var(--dur, 30s) linear infinite; }
+  .marquee:hover .track { animation-play-state: paused; }
+  @keyframes run { to { transform: translateX(-50%); } }
+  .tile { flex: none; width: 8rem; height: 8rem; margin-right: 1.5rem; display: grid; place-items: center; padding: 1.25rem; background: #f4f4f5; border-radius: 1rem; }
+  .tile.round { border-radius: 50%; }
+  .tile svg { width: 100%; height: auto; }
+  .tile.flat { background: transparent; }
+  .static { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+  .static .tile { margin: 0; }
+  .switch { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+  .switch button { border: 0; background: #3a3a40; color: #f2f2f4; font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+  .switch button.on { background: #0a84ff; }
+  .notes { max-width: 1100px; color: #ff9f0a; font-size: 12.5px; margin-top: 12px; }
+  .notes p + p { margin-top: 6px; }
+</style>
+</head>
+<body>
+<h1>Logo-Modul – Darstellung „Laufband“</h1>
+<p class="lead">Oben links der Block im Panel (Reiter Layout), oben rechts die Einstellungen im Project Wizard. Unten die Website – alles ist verbunden und bedienbar. Erläuterungen in Orange gehören nicht zum Plugin.</p>
+
+<div class="grid2">
+  <div class="box">
+    <div class="boxt">Panel › Block „Logos“</div>
+    <div class="dtabs"><span>Inhalt</span><span class="on">Layout</span><span>Stil</span><span>Raster</span></div>
+    <div class="f new"><div class="lab">Darstellung</div><span class="tog" id="disp"><span data-d="grid">Raster</span><span data-d="marquee">Laufband</span></span>
+      <div class="help">Laufband: Die Logos laufen endlos in einer Reihe durch.</div></div>
+    <div class="f" id="perrow"><div class="lab">Logos pro Reihe</div>
+      <div class="ranges"><span class="rng">Mobil <b>2</b></span><span class="rng">Tablet <b>3</b></span><span class="rng">Laptop <b>5</b></span><span class="rng">Desktop <b>6</b></span></div></div>
+  </div>
+  <div class="box">
+    <div class="boxt">Project Wizard › Blöcke › Logos › Design</div>
+    <div class="sec new f"><h3>Laufband</h3><div class="card">
+      <div class="row"><div class="rl">Geschwindigkeit</div><div class="rv"><input type="range" id="speed" min="10" max="80" step="5" value="30"><b id="speedv">30 s</b></div></div>
+      <div class="row"><div class="rl">Weiche Ränder</div><div class="rv"><span class="tog" id="soft"><span data-s="1">Ein</span><span data-s="0">Aus</span></span></div></div>
+    </div><div class="help">Geschwindigkeit: Sekunden für einen Durchlauf aller Logos – mehr ist langsamer. Weiche Ränder: Die Logos laufen links und rechts ins Transparente aus.</div></div>
+  </div>
+</div>
+
+<h2>Website</h2>
+<div class="switch" id="look"></div>
+<div class="site"><div class="tl">VERTRAUEN UNS</div><div class="inner" id="out"></div></div>
+<div class="notes">
+  <p><b>Laufband</b> ist eine zweite Darstellung im bestehenden Logo-Modul – Kacheln, Form, Hintergrund, Größe und Abstände bleiben, wie sie im Project Wizard eingestellt sind. „Logos pro Reihe“ verschwindet beim Laufband. Fahr mit der Maus über das Band: Es hält an, damit man ein verlinktes Logo anklicken kann.</p>
+  <p>„Bewegung reduzieren“ im Betriebssystem (oben umschaltbar): Das Band steht still und die Logos erscheinen als Raster – wichtig für die Barrierefreiheit. Wenige Logos (oben „3 Logos“) wiederholt das Band, bis keine Lücke bleibt.</p>
+  <p>Technik: reines CSS, kein JavaScript. Die Logos stehen zweimal hintereinander, das Band wandert um die halbe Länge – der Sprung zurück ist unsichtbar. Die Wiederholungen sind für Screenreader ausgeblendet (aria-hidden).</p>
+</div>
+<script>
+  const NAMES = ['Nordwerk', 'Alpenbank', 'Lumio', 'Brightside', 'Kestrel', 'Vanta', 'Orbis', 'Helix'];
+  const COLORS = ['#1f6feb', '#d1242f', '#8250df', '#1a7f37', '#bf8700', '#0f172a', '#e85d04', '#0e7490'];
+  const logo = (i) => `<svg viewBox="0 0 120 40"><circle cx="16" cy="20" r="11" fill="${COLORS[i]}"/><text x="32" y="26" font-family="-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#222">${NAMES[i]}</text></svg>`;
+  const S = { disp: 'marquee', speed: 30, soft: true, look: 'tiles', reduced: false, count: 8 };
+  const looks = [['Kacheln', 'tiles'], ['Rund', 'round'], ['Ohne Kacheln', 'flat']];
+  const lb = document.getElementById('look');
+  const btn = (t, on, f) => { const b = document.createElement('button'); b.textContent = t; b.onclick = f; if (on) b.classList.add('on'); return b; };
+  function buttons() {
+    lb.innerHTML = '';
+    looks.forEach(([t, k]) => lb.appendChild(btn(t, S.look === k, () => { S.look = k; render(); })));
+    lb.appendChild(btn(S.count === 8 ? '8 Logos' : '3 Logos', false, () => { S.count = S.count === 8 ? 3 : 8; render(); }));
+    lb.appendChild(btn('Bewegung reduzieren: ' + (S.reduced ? 'ein' : 'aus'), S.reduced, () => { S.reduced = !S.reduced; render(); }));
+  }
+  function render() {
+    buttons();
+    document.querySelectorAll('#disp span').forEach((s) => s.classList.toggle('on', s.dataset.d === S.disp));
+    document.querySelectorAll('#soft span').forEach((s) => s.classList.toggle('on', (s.dataset.s === '1') === S.soft));
+    document.getElementById('perrow').style.display = S.disp === 'grid' ? '' : 'none';
+    document.getElementById('speedv').textContent = S.speed + ' s';
+    const cls = 'tile' + (S.look === 'round' ? ' round' : S.look === 'flat' ? ' flat' : '');
+    const items = Array.from({ length: S.count }, (_, i) => `<div class="${cls}">${logo(i)}</div>`);
+    const out = document.getElementById('out');
+    if (S.disp === 'grid' || S.reduced) { out.innerHTML = '<div class="static">' + items.join('') + '</div>'; return; }
+    // enough copies to fill twice the width, then the whole set again (the seamless jump)
+    let set = items.slice(); while (set.length < 10) set = set.concat(items);
+    out.innerHTML = '<div class="marquee' + (S.soft ? ' soft' : '') + '"><div class="track" style="--dur:' + S.speed * set.length / 8 + 's">' + set.join('') + set.join('') + '</div></div>';
+  }
+  document.getElementById('disp').onclick = (e) => { if (e.target.dataset.d) { S.disp = e.target.dataset.d; render(); } };
+  document.getElementById('soft').onclick = (e) => { if (e.target.dataset.s) { S.soft = e.target.dataset.s === '1'; render(); } };
+  document.getElementById('speed').oninput = (e) => { S.speed = +e.target.value; render(); };
+  render();
+</script>
+</body>
+</html>

@@ -49,6 +49,14 @@
 					"max": 4,
 					"label": "kirbyblock-logocloud.item-padding"
 				},
+				"marquee-duration": {
+					"label": "kirbyblock-logocloud.marquee-duration",
+					"value": "30s",
+					"unit": "s",
+					"step": 5,
+					"min": 5,
+					"max": 120
+				},
 				"item-padding-y": {
 					"label": "kirbyblock-logocloud.item-padding-y",
 					"value": "1.25rem",
@@ -232,7 +240,17 @@
 			"padding-right": {
 				"default": true
 			},
-			"logos-sm": {
+			"logo-display": {
+					"label": "kirbyblock-logocloud.logo-display",
+					"options": [
+						"grid",
+						"marquee"
+					],
+					"required": true,
+					"fixed": true,
+					"default": "grid"
+				},
+				"logos-sm": {
 				"options": [
 					"1",
 					"2",
@@ -292,7 +310,15 @@
 				"required": true,
 				"fixed": true
 			},
-			"item-format": {
+"item-marquee-edges": {
+					"label": "kirbyblock-logocloud.marquee-edges",
+					"options": [
+						"soft",
+						"hard"
+					],
+					"default": "soft"
+				},
+				"item-format": {
 				"label": "kirbyblock-logocloud.item-format",
 				"options": [
 					"square",
