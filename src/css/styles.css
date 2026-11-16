@@ -165,12 +165,22 @@ section[data-block="logocloud"] div[data-block="items"][data-display="marquee"] 
 		display: flex;
 		align-items: center;
 		width: max-content;
-		/* the time for all logos once – the repeated ones take as long more */
-		animation: pwlogocloud-marquee calc(var(--pwlogocloud-marquee-duration, 30s) * var(--pwlogocloud-marquee-repeat, 1)) linear infinite;
+		/* the time per logo × the logos of one half: every marquee runs at
+		   the same speed, however many logos it has */
+		animation: pwlogocloud-marquee calc(var(--pwlogocloud-marquee-duration, 3s) * var(--pwlogocloud-marquee-count, 10)) linear infinite;
 	}
-	/* (the gap after every logo, also the last: the halves are the same length) */
+	/* (the gap after every logo, also the last: the halves are the same length;
+	   no "at most 100 %" of the grid – WebKit measured the track shorter,
+	   it then ran slower and jumped) */
 	[data-block="item"] {
+		flex-shrink: 0;
+		max-width: none;
 		margin-right: var(--pwlogocloud-item-gap, 1.5rem);
+	}
+	/* square tiles: their width set – WebKit takes the track's width from
+	   the tiles' content, not from their flex basis */
+	&:not([data-format="flexible"]) [data-block="item"] {
+		width: var(--pwlogocloud-size);
 	}
 	/* held while the mouse is on it or a logo has the focus – to click a link */
 	&:hover [data-marquee-track],

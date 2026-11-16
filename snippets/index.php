@@ -65,7 +65,8 @@ if ($logos->count() > 0):
 
 	if ($display === 'marquee'):
 		$repeat = (int) ceil(12 / count($tiles));
-		echo '<div data-marquee-track style="--pwlogocloud-marquee-repeat:'.$repeat.'">'."\n";
+		// (the logos in one half: the speed is per logo, the same for every block)
+		echo '<div data-marquee-track style="--pwlogocloud-marquee-count:'.($repeat * count($tiles)).'">'."\n";
 		for ($copy = 0; $copy < $repeat * 2; $copy++):
 			foreach ($tiles as [$open, $close]):
 				// (copies: hidden, their links out of the tab order)
