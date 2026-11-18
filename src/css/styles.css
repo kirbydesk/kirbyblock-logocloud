@@ -150,18 +150,33 @@ section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="8"] { -
 	moves by half its length (the jump back can't be seen). Its speed and
 	edges: Project Wizard → Logo cloud › Design
 -----------------------------------------------------------------------------*/
-/* the marquee from edge to edge of the block (as wide as the content or
-   the screen: its block size), the intro above it in the grid – measured
-   by the block itself (no 100vw: no scrollbar) */
-section[data-block="logocloud"]:has(div[data-display="marquee"]) {
-	container-type: inline-size;
+/* to the edges ("Marquee to the edge"): the marquee after the grid, over
+   the block's whole width (as wide as the content or the screen: its block
+   size; the grid's width and the side paddings don't apply to it) – the
+   block's space below it, the gap to the intro above it */
+section[data-block="logocloud"][data-marquee="edge"] {
+	&[data-padding-bottom] [data-layout="grid-item"] {
+		padding-bottom: 0;
+	}
+	/* (the intro's last element keeps its space below, as when the logos
+	   followed it in the grid) */
+	&[data-padding-bottom] [data-layout="grid-item"] > :is([data-field="tagline"], [data-field="heading"], [data-field="textarea"], [data-field="writer"], [data-field="markdown"]):last-child {
+		margin-bottom: var(--pw-space-after);
+	}
+	&[data-padding-bottom="small"] > [data-marquee-edge] {
+		padding-bottom: var(--global-padding-bottom-small);
+	}
+	&[data-padding-bottom="large"] > [data-marquee-edge] {
+		padding-bottom: var(--global-padding-bottom-large);
+	}
+	> [data-layout="grid"]:has([data-field]) + [data-marquee-edge] {
+		padding-top: var(--pwlogocloud-item-text-gap);
+	}
 }
 section[data-block="logocloud"] div[data-block="items"][data-display="marquee"] {
 	display: block;
 	max-width: none;
 	overflow: hidden;
-	width: 100cqw;
-	margin-inline: calc(50% - 50cqw);
 
 	/* soft edges: the logos fade out on both sides (their width: Project
 	   Wizard → Logo cloud › Design › Marquee) */

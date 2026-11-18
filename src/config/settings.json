@@ -320,7 +320,15 @@
 				"required": true,
 				"fixed": true
 			},
-"item-marquee-edges": {
+"item-marquee-bleed": {
+					"label": "kirbyblock-logocloud.marquee-bleed",
+					"options": [
+						"edge",
+						"content"
+					],
+					"default": "edge"
+				},
+				"item-marquee-edges": {
 					"label": "kirbyblock-logocloud.marquee-edges",
 					"options": [
 						"soft",

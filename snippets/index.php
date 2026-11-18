@@ -8,8 +8,15 @@ $defaults = $config['defaults'];
 // Custom Background
 pwSnippet::customCss($block);
 
+// a marquee to the block's edges: below the grid (the intro in it), over
+// the block's whole width – whatever the grid's width (Project Wizard ›
+// Logo cloud › Design › Marquee)
+$logos   = $block->logos()->toFiles();
+$display = $block->logodisplay()->or($defaults['logo-display'] ?? 'grid')->value() === 'marquee' ? 'marquee' : 'grid';
+$edge    = $display === 'marquee' && $logos->count() > 0 && ($defaults['item-marquee-bleed'] ?? 'edge') !== 'content';
+
 // Section + Grid open
-echo pwSnippet::sectionOpen('logocloud', $block, $settings);
+echo pwSnippet::sectionOpen('logocloud', $block, $settings, $edge ? ' data-marquee="edge"' : '');
 echo pwSnippet::gridOpen($block);
 
 // Tagline
@@ -27,13 +34,14 @@ if (!empty($settings['editor'])):
 	snippet('editor', ['content' => $block]);
 endif;
 
-// Logos (SVG files)
-$logos = $block->logos()->toFiles();
+// Logos (SVG files): in the grid, or (to the edges) after it
+if ($edge):
+	echo pwSnippet::gridClose();
+	echo '<div data-marquee-edge>'."\n";
+endif;
 if ($logos->count() > 0):
 
 	// grid, or one row running endlessly (marquee)
-	$display = $block->logodisplay()->or($defaults['logo-display'] ?? 'grid')->value() === 'marquee' ? 'marquee' : 'grid';
-
 	echo '<div data-block="items"';
 	echo ' data-display="'.$display.'"';
 	if ($display === 'marquee'):
@@ -85,5 +93,5 @@ if ($logos->count() > 0):
 endif;
 
 // Close
-echo pwSnippet::gridClose();
+echo $edge ? '</div>'."\n" : pwSnippet::gridClose();
 echo pwSnippet::sectionClose();
