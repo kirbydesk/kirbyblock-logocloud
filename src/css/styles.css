@@ -150,15 +150,24 @@ section[data-block="logocloud"] div[data-block="items"][data-per-row-sm="8"] { -
 	moves by half its length (the jump back can't be seen). Its speed and
 	edges: Project Wizard → Logo cloud › Design
 -----------------------------------------------------------------------------*/
+/* the marquee from edge to edge of the block (as wide as the content or
+   the screen: its block size), the intro above it in the grid – measured
+   by the block itself (no 100vw: no scrollbar) */
+section[data-block="logocloud"]:has(div[data-display="marquee"]) {
+	container-type: inline-size;
+}
 section[data-block="logocloud"] div[data-block="items"][data-display="marquee"] {
 	display: block;
 	max-width: none;
 	overflow: hidden;
+	width: 100cqw;
+	margin-inline: calc(50% - 50cqw);
 
-	/* soft edges: the logos fade out on both sides */
+	/* soft edges: the logos fade out on both sides (their width: Project
+	   Wizard → Logo cloud › Design › Marquee) */
 	&[data-edges="soft"] {
-		-webkit-mask-image: linear-gradient(to right, transparent, #000 5rem, #000 calc(100% - 5rem), transparent);
-		mask-image: linear-gradient(to right, transparent, #000 5rem, #000 calc(100% - 5rem), transparent);
+		-webkit-mask-image: linear-gradient(to right, transparent, #000 var(--pwlogocloud-marquee-edge-width, 5rem), #000 calc(100% - var(--pwlogocloud-marquee-edge-width, 5rem)), transparent);
+		mask-image: linear-gradient(to right, transparent, #000 var(--pwlogocloud-marquee-edge-width, 5rem), #000 calc(100% - var(--pwlogocloud-marquee-edge-width, 5rem)), transparent);
 	}
 
 	[data-marquee-track] {

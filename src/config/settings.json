@@ -57,6 +57,16 @@
 					"min": 0.5,
 					"max": 20
 				},
+				"marquee-edge-width": {
+					"label": "kirbyblock-logocloud.marquee-edge-width",
+					"default": "5rem",
+					"lg": "5rem",
+					"xl": "5rem",
+					"unit": "rem",
+					"step": 0.5,
+					"min": 0,
+					"max": 20
+				},
 				"item-padding-y": {
 					"label": "kirbyblock-logocloud.item-padding-y",
 					"value": "1.25rem",

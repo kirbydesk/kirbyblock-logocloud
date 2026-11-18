@@ -19,6 +19,7 @@
 	'kirbyblock-logocloud.logo-display.help' => 'Marquee: the logos run endlessly in one row.',
 	'kirbyblock-logocloud.marquee-duration' => 'Speed',
 	'kirbyblock-logocloud.marquee-edges' => 'Soft edges',
+	'kirbyblock-logocloud.marquee-edge-width' => 'Edge width',
 	'kirbyblock-logocloud.marquee-edges.soft' => 'On',
 	'kirbyblock-logocloud.marquee-edges.hard' => 'Off',
 	'kirbyblock-logocloud.item-format' => 'Format',

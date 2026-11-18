@@ -19,6 +19,7 @@
 	'kirbyblock-logocloud.logo-display.help' => 'Laufband: Die Logos laufen endlos in einer Reihe durch.',
 	'kirbyblock-logocloud.marquee-duration' => 'Geschwindigkeit',
 	'kirbyblock-logocloud.marquee-edges' => 'Weiche Ränder',
+	'kirbyblock-logocloud.marquee-edge-width' => 'Breite der Ränder',
 	'kirbyblock-logocloud.marquee-edges.soft' => 'Ein',
 	'kirbyblock-logocloud.marquee-edges.hard' => 'Aus',
 	'kirbyblock-logocloud.item-format' => 'Format',
